@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Private AI">
+<meta name="theme-color" content="#0b3d63">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<title>Private AI (offline)</title>
+</head>
+<body>
+<header>
+  <h1>🔒 Private AI</h1>
+  <span id="net" class="badge"></span>
+  <button id="settings-btn" aria-label="Settings">⚙︎</button>
+</header>
+<main>
+  <section id="empty" hidden>
+    <h2>Add your documents</h2>
+    <p>Choose your PDFs, Word, PowerPoint and Excel files (or a whole folder) from the Files app. They are read, sorted, indexed and kept <b>on this iPad only</b>. No Mac, no account, and no network needed after the first launch.</p>
+    <p><button id="btn-add-empty" class="primary">Add documents…</button></p>
+  </section>
+  <section id="search" hidden>
+    <form id="form" autocomplete="off">
+      <input id="q" type="search" placeholder="Ask about your documents…  (English, हिन्दी, ਪੰਜਾਬੀ)" enterkeyhint="search" autocapitalize="none" spellcheck="false">
+      <button id="go" type="submit">Search</button>
+    </form>
+    <div id="filters"></div>
+    <div id="info"></div>
+    <div id="ai" hidden>
+      <div class="ai-head"><b>AI summary</b> <span class="muted">from the passages below, by a small model on this iPad. Always check the source.</span> <button id="ai-stop" hidden>Stop</button></div>
+      <div id="ai-answer"></div>
+    </div>
+    <div id="results"></div>
+  </section>
+</main>
+<div id="sheet" hidden>
+  <div class="panel">
+    <div class="panel-head"><h2 id="sheet-title"></h2><button id="sheet-close" aria-label="Close">✕</button></div>
+    <div id="sheet-body"></div>
+  </div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
